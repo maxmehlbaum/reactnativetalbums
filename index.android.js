@@ -10,7 +10,8 @@ import AlbumList from './src/components/AlbumList';
 //create a component
 // component is a javascript function that runs jsx
 const App = () => (
-  <View>
+  //flex style lets you expand component to fill entire area of device
+  <View style={{ flex: 1 }}>
   <Header headerText={'Albums'} />
   <AlbumList />
   </View>
