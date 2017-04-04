@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -7,7 +7,7 @@ import Button from './Button';
 // do need access to state or life cycle components
 //and thats why it s not a class
 const AlbumDetail = ({ album }) => {
-const { title, artist, thumbnail_image, image } = album;
+const { title, artist, thumbnail_image, image, url } = album;
 
 const {
   thumbnailStyle,
@@ -38,7 +38,9 @@ const {
     source={{ uri: image }} />
   </CardSection>
   <CardSection>
-    <Button />
+    <Button onPress={() => Linking.openURL(url)}>
+      Buy Now
+    </Button>
   </CardSection>
 </Card>
   );
